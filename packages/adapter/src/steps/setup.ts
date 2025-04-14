@@ -55,7 +55,7 @@ export const setup = async ({ builder, tmp, options }: Context) => {
     }
   )
 
-  const bridgeAuthToken = nanoid()
+  const bridgeAuthToken = options.bridgeAuthToken ?? nanoid()
 
   builder.mkdirp(path.join(options.out, 'external'))
   await copy(

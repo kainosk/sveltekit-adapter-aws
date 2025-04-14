@@ -116,4 +116,14 @@ export type AdapterOptions = {
    * ```
    */
   lambdaModifier?: (lambdaFunction: aws_lambda.Function) => unknown
+
+  /**
+   * A shared secret used to authenticate requests from CloudFront to the deployed Lambda.
+   * This is intended to prevent unauthorized direct access to the function URL.
+   * If not provided, a random token will be generated at build time.
+   * The token must match the value set in the CloudFront request header.
+   *
+   * @default undefined
+   */
+  bridgeAuthToken?: string
 }
