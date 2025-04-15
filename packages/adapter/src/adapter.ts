@@ -26,7 +26,8 @@ export const adapter = (options?: AdapterOptions): Adapter => {
           deploy: options?.deploy ?? false,
           cdn: options?.cdn ?? false,
           s3TransferAcceleration: options?.s3TransferAcceleration ?? false,
-          stream: options?.stream ?? true
+          stream: options?.stream ?? true,
+          bridgeAuthToken: options?.bridgeAuthToken
         },
         tmp
       }
